@@ -1,4 +1,4 @@
-package ru.otus.api.mock.stubs;
+package ru.otus.mock.stubs.rest;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 

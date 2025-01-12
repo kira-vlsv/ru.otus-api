@@ -1,4 +1,4 @@
-package ru.otus.api.mock.model;
+package ru.otus.mock.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course {
+public class UserScore {
     private String name;
-    private int price;
+    private int score;
 }

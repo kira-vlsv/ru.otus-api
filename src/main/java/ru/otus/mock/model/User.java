@@ -1,17 +1,17 @@
-package ru.otus.api.dto;
+package ru.otus.mock.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-class Tag extends BaseDTO {
-    private long id;
+public class User {
     private String name;
+    private String course;
+    private String email;
+    private int age;
 }

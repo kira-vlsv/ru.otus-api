@@ -1,4 +1,4 @@
-package ru.otus.api.mock.model;
+package ru.otus.mock.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Course {
     private String name;
-    private String course;
-    private String email;
-    private int age;
+    private int price;
 }

@@ -1,10 +1,10 @@
-package ru.otus.api.mock.stubs;
+package ru.otus.mock.stubs.rest;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
-import ru.otus.api.mock.model.User;
-import ru.otus.api.mock.model.UserScore;
+import ru.otus.mock.model.User;
+import ru.otus.mock.model.UserScore;
 
 import java.util.List;
 

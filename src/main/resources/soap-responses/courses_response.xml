@@ -1,0 +1,16 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <GetCoursesResponse>
+            <Courses>
+                <Course>
+                    <Name>QA java</Name>
+                    <Price>15000</Price>
+                </Course>
+                <Course>
+                    <Name>Java</Name>
+                    <Price>12000</Price>
+                </Course>
+            </Courses>
+        </GetCoursesResponse>
+    </soap:Body>
+</soap:Envelope>

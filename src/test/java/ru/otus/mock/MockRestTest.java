@@ -1,20 +1,20 @@
-package ru.otus.api.mock;
+package ru.otus.mock;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import ru.otus.api.mock.helper.HttpHelper;
-import ru.otus.api.mock.model.Course;
-import ru.otus.api.mock.model.User;
-import ru.otus.api.mock.model.UserScore;
-import ru.otus.api.mock.stubs.StubServer;
+import ru.otus.mock.helper.HttpHelper;
+import ru.otus.mock.model.Course;
+import ru.otus.mock.model.User;
+import ru.otus.mock.model.UserScore;
+import ru.otus.mock.stubs.rest.StubServer;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MockTest {
+public class MockRestTest {
 
     private static StubServer stubServer;
     private static HttpHelper httpHelper;

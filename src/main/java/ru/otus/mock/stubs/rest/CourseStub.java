@@ -1,8 +1,8 @@
-package ru.otus.api.mock.stubs;
+package ru.otus.mock.stubs.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.tomakehurst.wiremock.WireMockServer;
-import ru.otus.api.mock.model.Course;
+import ru.otus.mock.model.Course;
 
 import java.util.List;
 
