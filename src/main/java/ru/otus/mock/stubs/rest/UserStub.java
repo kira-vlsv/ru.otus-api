@@ -19,7 +19,6 @@ public class UserStub {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
 
-            // User object for /user/get/1
             UserScore userScore = new UserScore("Test user", 78);
             String userJson = objectMapper.writeValueAsString(userScore);
             wireMockServer.stubFor(get(urlPathMatching("/user/get/\\d+")).willReturn(
@@ -28,7 +27,6 @@ public class UserStub {
                             .withHeader("Content-Type", "application/json")
                             .withBody(userJson)));
 
-            // User list for /user/get/all
             String usersJson = objectMapper.writeValueAsString(List.of(
                     new User("Test user", "QA", "test@test.test", 23)));
             wireMockServer.stubFor(get(urlEqualTo("/user/get/all")).willReturn(
