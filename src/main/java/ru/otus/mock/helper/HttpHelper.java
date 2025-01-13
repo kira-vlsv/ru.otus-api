@@ -1,8 +1,8 @@
 package ru.otus.mock.helper;
 
-import io.restassured.response.Response;
-
 import static io.restassured.RestAssured.given;
+
+import io.restassured.response.Response;
 
 public class HttpHelper {
     public Response get(String endpoint) {

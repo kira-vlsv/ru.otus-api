@@ -1,13 +1,12 @@
 package ru.otus.mock.stubs.soap;
 
-import com.github.tomakehurst.wiremock.WireMockServer;
-
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.get;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
+
+import com.github.tomakehurst.wiremock.WireMockServer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class CourseSoapStub {
 

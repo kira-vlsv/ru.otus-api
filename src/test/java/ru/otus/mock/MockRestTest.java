@@ -1,5 +1,7 @@
 package ru.otus.mock;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,10 +11,7 @@ import ru.otus.mock.model.Course;
 import ru.otus.mock.model.User;
 import ru.otus.mock.model.UserScore;
 import ru.otus.mock.stubs.rest.StubServer;
-
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MockRestTest {
 

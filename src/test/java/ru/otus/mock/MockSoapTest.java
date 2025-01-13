@@ -1,17 +1,16 @@
 package ru.otus.mock;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import ru.otus.mock.helper.SoapHelper;
 import ru.otus.mock.stubs.soap.SoapStubServer;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MockSoapTest {
 
