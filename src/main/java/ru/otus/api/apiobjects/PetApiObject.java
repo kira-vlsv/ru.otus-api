@@ -11,4 +11,8 @@ public class PetApiObject extends BaseApiObject {
     public Pet createPet(Pet pet) {
         return requestPost("/", pet).as(Pet.class);
     }
+
+    public void deletePet(Long petId) {
+        requestDelete(String.format("/%d", petId));
+    }
 }

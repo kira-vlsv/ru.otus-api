@@ -3,19 +3,18 @@ package ru.otus.api.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-public class Pet extends BaseDTO {
+public class Pet {
     private long id;
     private Category category;
     private String name;
-    private String[] photoUrls;
-    private Tag[] tags;
+    private List<String> photoUrls;
+    private List<Tag> tags;
     private String status;
 }

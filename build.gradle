@@ -1,6 +1,8 @@
 plugins {
     id "java-library"
     id "io.freefair.lombok" version "8.11"
+    id "com.github.spotbugs" version "6.0.26"
+    id "checkstyle"
 }
 
 group = 'ru.otus'
@@ -14,6 +16,7 @@ ext {
     junitVersion = '5.10.1'
     assertjVersion = '3.26.3'
     lombokVersion = '1.18.36'
+    guiceVersion = '7.0.0'
 }
 
 java {
@@ -34,11 +37,42 @@ dependencies {
 
     implementation "com.github.javafaker:javafaker:1.0.2"
 
+    implementation "com.google.inject:guice:${guiceVersion}"
 }
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
     options.release.set(21)
+}
+
+checkstyle {
+    toolVersion = '10.18.2'
+    configFile = file("src/main/resources/checkstyle.xml")
+}
+
+tasks.named("spotbugsMain").configure {
+    reports {
+        html.required.set(true)
+        xml.required.set(false)
+    }
+}
+
+tasks.named("spotbugsTest").configure {
+    reports {
+        html.required.set(true)
+        xml.required.set(false)
+    }
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        html.required.set(true)
+        xml.required.set(false)
+    }
+}
+
+tasks.named("test") {
+    dependsOn("checkstyleMain", "checkstyleTest", "spotbugsTest")
 }
 
 test {

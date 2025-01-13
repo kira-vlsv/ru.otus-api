@@ -1,12 +1,11 @@
 package ru.otus.api.apiobjects;
 
-import io.restassured.response.Response;
-import org.apache.http.HttpStatus;
-import ru.otus.api.dto.BaseDTO;
-
 import static io.restassured.RestAssured.given;
 import static ru.otus.api.specs.BaseSpecification.baseRequestSpecification;
 import static ru.otus.api.specs.BaseSpecification.baseResponseSpecification;
+
+import io.restassured.response.Response;
+import org.apache.http.HttpStatus;
 
 public class BaseApiObject {
 
@@ -19,10 +18,17 @@ public class BaseApiObject {
         return response;
     }
 
-    protected Response requestPost(String path, BaseDTO dto) {
+    protected <T> Response requestPost(String path, T dto) {
         response = given(baseRequestSpecification(path))
                 .body(dto)
                 .post();
+        checkCode(HttpStatus.SC_OK, response);
+        return response;
+    }
+
+    protected Response requestDelete(String path) {
+        response = given(baseRequestSpecification(path))
+                .delete();
         checkCode(HttpStatus.SC_OK, response);
         return response;
     }
