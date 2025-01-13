@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<FindBugsFilter>
+    <Match>
+        <Package name="ru.otus.api.dto"/>
+        <Bug code="EI"/>
+    </Match>
+
+    <Match>
+        <Package name="ru.otus.api.dto"/>
+        <Bug code="EI2"/>
+    </Match>
+</FindBugsFilter>
