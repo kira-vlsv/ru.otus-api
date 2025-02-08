@@ -3,6 +3,9 @@ package ru.otus.api.pet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Allure;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Feature;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,6 +15,7 @@ import ru.otus.api.apiobjects.PetApiObject;
 import ru.otus.api.dto.Pet;
 
 @ApiTest
+@Feature("Positive tests /pet")
 public class PetPositiveTest {
 
     @Inject
@@ -31,6 +35,7 @@ public class PetPositiveTest {
     }
 
     @Test
+    @AllureId("3")
     @DisplayName("Check pet creation")
     void createPet() {
         var id = faker.number().randomNumber();
@@ -42,12 +47,14 @@ public class PetPositiveTest {
                 .status("available").build();
         var response = petApiObject.createPet(pet);
 
-        assertThat(response)
+        Allure.step("Verify pet data is returned", () -> assertThat(response)
                 .as("Pet object data should be returned")
-                .isEqualTo(pet);
+                .isEqualTo(pet)
+        );
     }
 
     @Test
+    @AllureId("4")
     @DisplayName("Check pet with valid id is returned")
     void getPetById() {
         // Создаём питомца
@@ -63,9 +70,10 @@ public class PetPositiveTest {
         // Проверяем, что питомец возвращается на get запрос
         var response = petApiObject.getPet(String.valueOf(pet.getId()));
 
-        assertThat(response)
+        Allure.step("Verify pet data is returned", () -> assertThat(response)
                 .as("Pet object data should be returned")
-                .isEqualTo(pet);
+                .isEqualTo(pet)
+        );
     }
 
 }
