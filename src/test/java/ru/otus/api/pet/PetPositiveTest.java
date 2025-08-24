@@ -9,6 +9,7 @@ import io.qameta.allure.Feature;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.otus.api.annotations.ApiTest;
 import ru.otus.api.apiobjects.PetApiObject;
@@ -36,6 +37,7 @@ public class PetPositiveTest {
 
     @Test
     @AllureId("3")
+    @Tag("smoke")
     @DisplayName("Check pet creation")
     void createPet() {
         var id = faker.number().randomNumber();
@@ -55,6 +57,7 @@ public class PetPositiveTest {
 
     @Test
     @AllureId("4")
+    @Tag("regress")
     @DisplayName("Check pet with valid id is returned")
     void getPetById() {
         // Создаём питомца

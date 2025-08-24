@@ -9,6 +9,7 @@ import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.otus.api.annotations.ApiTest;
 
@@ -18,6 +19,7 @@ public class PetNegativeTest {
 
     @Test
     @AllureId("1")
+    @Tag("smoke")
     @DisplayName("Check invalid pet creation")
     void createPetShouldFailWithInvalidContentType() {
         String invalidPet = "{\"id\": \"1\"}";
@@ -34,6 +36,7 @@ public class PetNegativeTest {
 
     @Test
     @AllureId("2")
+    @Tag("regress")
     @DisplayName("Check get pet with invalid id return 404 code")
     void getPetByInvalidId() {
         var id = -1223243453L;
