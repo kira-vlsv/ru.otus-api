@@ -24,7 +24,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Запускаем тесты с указанным тегом из параметра
-                sh "./gradlew clean test -Dtags='${params.TAGS}'"
+                sh "./gradlew clean test -Ptags='${params.TAGS}'"
             }
         }
     }
