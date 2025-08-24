@@ -88,7 +88,11 @@ tasks.named("test") {
 }
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform() {
+        if (project.hasProperty("tags")) {
+            includeTags(project.property("tags") as String)
+        }
+    }
     systemProperty 'baseUrl', 'https://petstore.swagger.io/v2/pet/'
 }
 
