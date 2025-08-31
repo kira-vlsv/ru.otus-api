@@ -103,3 +103,15 @@ publishing {
         }
     }
 }
+
+task diagnoseEnvironment {
+    doLast {
+        println "========== Diagnose Environment =========="
+        println "JAVA_HOME (env)         = ${System.getenv('JAVA_HOME')}"
+        println "java.home (sys property)= ${System.getProperty('java.home')}"
+        println "java.version            = ${System.getProperty('java.version')}"
+        println "Java compiler version   = ${org.gradle.api.JavaVersion.current()}"
+        println "=========================================="
+    }
+}
+
